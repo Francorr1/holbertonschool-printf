@@ -55,4 +55,4 @@ It is known that there are some other functions to show messages on the screen, 
 ***
 ## Authors
 ***
-[Franco Correa](), [Miguel Coa]()
+[Franco Correa](https://github.com/Francorr1), [Miguel Coa](https://github.com/Macj04)
