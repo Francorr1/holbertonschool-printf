@@ -32,9 +32,18 @@ One of the main functionalities that we can avail of programming in C languages 
 
 It is known that there are some other functions to show messages on the screen, but PRINTF has the advantage of entering as much text and as many variables as is desired. Using the command [man 3 printf](https://man7.org/linux/man-pages/man3/printf.3.html), we can display the function manual which is going to provide all kinds of help and explanation on the use of the previously mentioned function.
 
+### Conversion Specifiers:
+
+| Type | Description |
+| ---- | --------|
+| %c | Prints Character |
+| %s | Prints String |
+| %% | Prints Percentage |
+| %i | Prints Integer |
+| %d | Prints decimal |
+
 ***
 ## Synopsis
-***
 
 + int _printf(const char *format, ...);
 
@@ -47,12 +56,16 @@ It is known that there are some other functions to show messages on the screen, 
 ***
 ## ¿How to use?
 ***
+You must include all the files listed above and your own .c file with a main function to call _printf.c
 
 ***
 ## Example
-***
+#### #include "main.h"
+
+_printf("Every wednesday at %d AM I go to the %s for the mandatory day.", 9, "Campus");
+
+Print: Every wednesday at 9 AM I go to the Campus for the mandatory day.
 
 ***
 ## Authors
-***
 [Franco Correa](https://github.com/Francorr1), [Miguel Coa](https://github.com/Macj04)
