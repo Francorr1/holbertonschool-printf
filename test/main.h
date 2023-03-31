@@ -11,11 +11,15 @@
 #include <stdarg.h>
 
 /**STRUCTURE*/
+typedef struct func
+{
+	char mod;
+	int (*f)(va_list mf);
+} func_t;
 
 /**Prototypes*/
 int _printf(const char *format, ...);
-int print_%(va_list mf)
-int _putchar_c(char c);
+int print_percent(va_list mf);
 int print_char(va_list mf);
 int print_string(va_list mf);
 
