@@ -5,7 +5,8 @@
 int _printf(const char *format, ...)
 {
 	va_list val;
-	int i = 0, m = 0, cont = 0, retcont = 0;
+	int i = 0, m = 0;
+	int cont = 0;
 	char arg;
 	char *str[1000];
 	func_t func[] = {{'%', print_percent}, {'c', print_char}, {'s', print_string},
@@ -13,27 +14,34 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(val, format);
-	*str = va_arg(val, char*);
-	if (str == NULL)
+	if (format == NULL)
 	{
 		return (-1);
 	}
-	for (i = 0; str[i]; i++)
+	while (format[i])
 	{
-		if (str[i] == "%")
+		if (format[i] == '%')
 		{
 			i++;
 			m = 0;
 			while (func[m].mod)
 			{
-				if (func[m].mod == *str[i])
+				if (func[m].mod == format[i])
 				{
-					cont += (func[m].f);
+					cont += func[m].f(val);
+					break;
 				}
+				m++;
 			}
 			i++;
 		}
-		write(1, str[i], 1);
-		cont++;
+		else
+		{
+			write(1, &format[i], 1);
+			cont++;
+			i++;
+		}
 	}
+	va_end(val);
+	return (cont);
 }
