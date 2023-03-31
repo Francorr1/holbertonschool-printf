@@ -72,3 +72,31 @@ int print_string(va_list mf)
 	/**return the number of characters printed*/
 	return (m);
 }
+/**
+ *
+ */
+int print_integer(va_list mf)
+{
+	int num = va_arg(mf, int);
+	int len = 0, temp = num;
+	char digit;
+
+	if (num < 0)
+	{
+		write(1, "-", 1);
+		len++;
+		num = -num;
+	}
+	do
+	{
+		temp /= 10;
+		len++;
+	} while (temp != 0);
+	do
+	{
+		digit = (num % 10) + '0';
+		write(1, &digit, 1);
+		num /= 10;
+	} while (num != 0);
+	return (len);
+}

@@ -5,12 +5,10 @@
 int _printf(const char *format, ...)
 {
 	va_list val;
-	int i = 0, m = 0;
-	int cont = 0;
+	int i = 0, m = 0, cont = 0;
 	char arg;
-	char *str[1000];
 	func_t func[] = {{'%', print_percent}, {'c', print_char}, {'s', print_string},
-		{'\0', NULL}
+		{'\0', NULL}, {'d', print_integer}, {'i', print_integer}
 	};
 
 	va_start(val, format);
