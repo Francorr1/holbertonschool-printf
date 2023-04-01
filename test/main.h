@@ -11,6 +11,11 @@
 #include <stdarg.h>
 
 /**STRUCTURE*/
+/**
+ * struct func - Structure of the format given to printf
+ * @mod: The format specifier given
+ * @f: The function that will be called
+ */
 typedef struct func
 {
 	char mod;
