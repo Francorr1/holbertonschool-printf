@@ -12,6 +12,7 @@ int print_percent(va_list mf)
 {
 	write(1, "%", 1);
 	return (1);
+	mf++;
 }
 
 /**
@@ -50,7 +51,7 @@ int print_string(va_list mf)
 	char *st = va_arg(mf, char*);
 
 	/**check if string is NULL, in this case print "(null)"*/
-	if (mf == NULL)
+	if (st == NULL)
 	{
 		write(1, "(", 1);
 		write(1, "n", 1);
@@ -79,7 +80,6 @@ int print_integer(va_list mf)
 {
 	int num = va_arg(mf, int);
 	int len = 0, temp = num;
-	char digit;
 
 	if (num < 0)
 	{
@@ -92,11 +92,6 @@ int print_integer(va_list mf)
 		temp /= 10;
 		len++;
 	} while (temp != 0);
-	do
-	{
-		digit = (num % 10) + '0';
-		write(1, &digit, 1);
-		num /= 10;
-	} while (num != 0);
+	write(1, &num, len);
 	return (len);
 }

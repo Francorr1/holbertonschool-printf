@@ -6,7 +6,6 @@ int _printf(const char *format, ...)
 {
 	va_list val;
 	int i = 0, m = 0, cont = 0;
-	char arg;
 	func_t func[] = {{'%', print_percent}, {'c', print_char}, {'s', print_string},
 		{'\0', NULL}, {'d', print_integer}, {'i', print_integer}
 	};
