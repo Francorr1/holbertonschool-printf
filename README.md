@@ -51,7 +51,7 @@ It is known that there are some other functions to show messages on the screen, 
 ## Flowchart
 > The following flowchart graphically represents the structured sequence required to develop our function
 ***
-![] (Flowchart)
+![image](https://user-images.githubusercontent.com/116041359/229371267-867cd926-2c77-4cef-bc6c-b836b5d9abf1.png)
 
 ***
 ## ¿How to use?
