@@ -23,17 +23,25 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			m = 0;
-			while (func[m].mod)
+			if (format[i])
 			{
-				if (func[m].mod == format[i])
+				m = 0;
+				while (func[m].mod)
 				{
-					cont += func[m].f(val);
-					break;
+					if (func[m].mod == format[i])
+					{
+						cont += func[m].f(val);
+						break;
+					}
+					m++;
 				}
-				m++;
+				i++;
 			}
-			i++;
+			else
+			{
+				va_end(val);
+				return (-1);
+			}
 		}
 		else
 		{
